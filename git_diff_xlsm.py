@@ -4,12 +4,13 @@
 # Instructions for setup:
 # 1. Place this file in a folder
 # 2. Add the following line to the global .gitconfig:
-#    -use cmd way as not to corrupt file
+#	-use cmd way as not to corrupt file
 #	 [diff "zip"]
 #   	binary = True
 #		textconv = python c:/path/to/git_diff_xlsm.py
 #
 # CMD Way: git config --global diff.zip.textconv "python c:/path/to/git_diff_xlsm.py"
+#
 #3. Add OfficeMalScanner.exe to /path/to/ directory where this script is
 # 4. Add the following line to the repository's .gitattributes
 #	*.xlsm diff=zip
@@ -99,7 +100,10 @@ def parseSheet(infile,outfile):
 					outfile.write("	" + str(xl.cellname(row,col)) + ": " + str(content) + "\n")
 		print( "\n")
 
-##def cleanUp():
+def cleanUp():
+	os.remove(os.getcwd() +"\\tempfile.zip")
+	shutil.rmtree(os.getcwd() + "\\temp")
+	shutil.rmtree(os.getcwd() + "\\VBAPROJECT.BIN-Macros")
 
 # output cell address and contents of cell
 def main():
@@ -111,6 +115,7 @@ def main():
 	parse(args[0],outfile)
 	print("\n \n")
 	parseSheet(args[0],outfile)
+	cleanUp()
 
 if __name__ == '__main__':
 	main()
