@@ -1,0 +1,5 @@
+Attribute VB_Name = "Module2"
+Public globalArray As Variant
+Public varIsSet As Integer
+
+

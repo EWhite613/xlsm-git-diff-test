@@ -4,12 +4,16 @@
 # Instructions for setup:
 # 1. Place this file in a folder
 # 2. Add the following line to the global .gitconfig:
+#    -use cmd way as not to corrupt file
 #	 [diff "zip"]
 #   	binary = True
 #		textconv = python c:/path/to/git_diff_xlsm.py
-# 3. Add the following line to the repository's .gitattributes
+#
+# CMD Way: git config --global diff.zip.textconv "python c:/path/to/git_diff_xlsm.py"
+#3. Add OfficeMalScanner.exe to /path/to/ directory where this script is
+# 4. Add the following line to the repository's .gitattributes
 #	*.xlsm diff=zip
-# 4. Now, typing [git diff] at the prompt will produce text versions
+# 5. Now, typing [git diff] at the prompt will produce text versions
 # of Excel .xlsm files
 
 
