@@ -26,6 +26,9 @@ This looks as follows:
     end
 ```
 
+
+
+
 Fenced code blocks require a blank line before and after.
 
 If you're using an HTML file, you can also use the `highlight` command with Liquid markup:
@@ -40,7 +43,7 @@ If you're using an HTML file, you can also use the `highlight` command with Liqu
 </pre>
 {% endraw %}
 
-It renders the same: 
+It renders the same:
 
 {% highlight ruby %}
     def foo
@@ -75,3 +78,33 @@ The keywords you must add to specify the highlighting (in the previous example, 
 * xml
 * http
 
+```html+handlebars
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  {{#link-to 'new' class="btn-floating btn-large red" }}{{fa-icon "plus"}}{{/link-to}}
+</div>
+
+<div class="contactTable">
+  <table class="striped">
+    <thead>
+      <th{{action "setSortBy" "name"}}> Name</th>
+      <th{{action "setSortBy" "phone"}}> Phone</th>
+      <th{{action "setSortBy" "email"}}> Email</th>
+      <th> Bio</th>
+    </thead>
+
+    <tbody>
+      {{#each model as |contact|}}
+        <tr>
+          <td>
+            {{#link-to 'contacts.show' contact}} {{contact.name}} {{/link-to}}
+          </td>
+          <td>{{contact.phone}}</td>
+          <td>{{contact.email}}</td>
+          <td> {{contact.bio}}</td>
+          <td><a href="#" {{action "delete" contact}} align="left">{{fa-icon "trash"}}</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+```
