@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'xlsm-git-diff-test',
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    baseURL: '/xlsm-git-diff-test',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
