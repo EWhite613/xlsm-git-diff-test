@@ -7,7 +7,7 @@ setup_git() {
 
 
 publish_gh_pages() {
-  git push origin --delete <branchName>
+  git push origin --delete gh-pages
   git checkout --orphan gh-pages && rm -rf `ls -a | grep -vE '\.gitignore|\.git|node_modules|bower_components|(^[.]{1,2}/?$)'` && git add -A && git commit -m "initial gh-pages commit"
   push origin -u gh-pages
   git branch -r
