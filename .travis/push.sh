@@ -8,7 +8,7 @@ setup_git() {
 
 publish_gh_pages() {
   git fetch
-  git checkout gh-pages 
+  git checkout -b gh-pages origin/gh-pages
   git branch -r
   git checkout dev
   ember github-pages:commit --message "[ci skip] Update gh-pages"
