@@ -15,6 +15,7 @@ publish_gh_pages() {
   git branch -r
   git checkout dev
   ember install ember-cli-github-pages
+  npm install
   git commit -am "[ci skip] install github-pages"
   ember github-pages:commit --message "[ci skip] Update gh-pages"
   git push
