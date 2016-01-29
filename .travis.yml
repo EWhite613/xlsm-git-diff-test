@@ -1,33 +1,26 @@
----
 language: node_js
 node_js:
-  - "5.4.0"
-
+- 5.4.0
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
-
-
+- export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
+- npm config set spin false
+- npm install -g npm@^2
 install:
-  - npm install -g bower
-  - chmod +x .travis/push.sh
-  - npm install
-  - bower install
-  - npm install -g ember-cli
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-  - ember install:addon ember-cli-github-pages
-  - .travis/push.sh
-
+- npm install -g bower
+- chmod +x .travis/push.sh
+- npm install
+- bower install
+- npm install -g ember-cli
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- ember install:addon ember-cli-github-pages
+- .travis/push.sh
 script:
-  - npm test
+- npm test
 env:
   global:
-    secure: GLzk48tAYIPmUq6gj51xr6wJ8tSM/B4hRXPcVniWPg8STfiCQhZ3ZM8h4YjRro5JLW/PxPxn7aonXKnZ+jXsAzAeKKxFV/yUXvIYgmuF0zCYmKYHp4p8juCt7OU0hjrzbrKBZyPDOQ2l72U6Sz6uWEnRJ48Kc6EYXMk4Y2Dzrex7jg8rF5lUj9VSaHPHO2LR0W6Iq97WGLHwRgAeUV7YMvpkSu5D6OSHBZeSZAjmxyqyhbhp/PVPgdNDH4TlBsY8NLUZ60R8HSMV/RFX1quAjGKs/DYZ0/RTBT3ublKz5D/CizKU8mZNgZyGhrnHoSMAmbSy/Trc91UqjBKyku8CFO0CwRhjsjtCZKpfUCcGTjw6Zo9qyo9y6YPMsJ4miKuzcr6g5xLIZ4+fOxZZkwlfof6c8VggEAxZzoxHadgfV4/DjaksZAxjz95lOkEpUKtsKTLidlsOVEBYT7URcnI5KKCPDhP9o2G4iSoFJhuvTa6/RSas/juc/kPdFejuQpX33OkU1Ds7amtshaAW5UA+ATfoR7HgqzqkBLr9/YWbV6XWSBW1GabktZnHjIMC2D6L0FvUsUiuDuYKPDmXzx36vJ9SAgD7kRE722iftsiKduoczIjzSozWWxxxt6G6Ckk4HlrVb1+IA8PzNGyV80EOkx42a/tnVOZJeCIt1YWqoZw=
+    secure: hGakroLegySgfSOnEqY7viYIpPoK1gcQMrTE9HtqrSkQuebZ0laznDKoU1VknwINTesg9AgyVgj40+6izH9W8K/Sd1aD1EwYR28kEprSI+vz8iWDoWQZQdO0z+76Hjq9f6adYdB3H0SMw3hxPMVoKlODwVciFi+W0VumigIs1VI+wKS/2Ij+l087qlQnkn/8SjjXgs6tKfrpTzhWJPnGqKBQX1FnwCpsqGFKJOPCRHVpOE+N5vee1FQCMpmkrcjK7CU70zBqdfMYEPmVjAAQ0gLFaUlW3B+fO1inuKns9PFklgqi87AI2n0Ag/xf2QGgt/X8Orv0ywAYAHsGHq8VgPqIScbHSa419IV7vdTbnXefERvtD8Vf1zSW+HDi11nqX5M8RWxnqBGikv76cBRNKxflwHPbbtrn1GTPty9Lk2Hxr4sCO5r1pAIzBTrxSOKU4TTpS7hVCih5t2MGNtIsWTh9yEH2qKcvHPhcf5jIcN7Ni52xlryk5FEr6/6+PSAfT8+t3zn1UxSRlVRLg95c0MA3zwYnmgNX6e3hRIP8e4hp0Vh32cpcGPdb9FAEcp0pf5GMvKvvZSmONRsdTH3IFn2GnpzfGyoOq33NLa/Re0CoX926i6QjKHMrspcUWQTlSp4HWChc5b5RbbVKujxdnwfrZXYVjOEBKulKIuX/o2E=
