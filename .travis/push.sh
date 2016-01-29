@@ -10,7 +10,6 @@ publish_gh_pages() {
   git checkout -b gh-pages -set-upstream origin gh-pages
   git pull
   rm -rf `ls -a | grep -vE '\.gitignore|\.git|node_modules|bower_components|(^[.]{1,2}/?$)'` && git add -A && git commit -m "initial gh-pages commit"
-  git push
   git branch -r
   git checkout dev
   git fetch
