@@ -7,10 +7,10 @@ setup_git() {
 
 
 publish_gh_pages() {
-  git checkout -b gh-pages
-  git fetch
+  git checkout -b gh-pages -set-upstream origin gh-pages
+  git pull
   rm -rf `ls -a | grep -vE '\.gitignore|\.git|node_modules|bower_components|(^[.]{1,2}/?$)'` && git add -A && git commit -m "initial gh-pages commit"
-  git push --set-upstream origin gh-pages
+  git push
   git branch -r
   git checkout dev
   git fetch
