@@ -8,7 +8,7 @@ setup_git() {
 
 publish_gh_pages() {
   git fetch
-  git checkout -b gh-pages origin/gh-pages
+  git checkout gh-pages && rm -rf `ls -a | grep -vE '\.gitignore|\.git|node_modules|bower_components|(^[.]{1,2}/?$)'` && git add -A && git commit -m "initial gh-pages commit"
   git branch -r
   git checkout dev
   ember github-pages:commit --message "[ci skip] Update gh-pages"
