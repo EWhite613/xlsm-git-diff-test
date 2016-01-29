@@ -13,7 +13,8 @@ publish_gh_pages() {
   git branch -r
   basename $(git remote show -n origin | grep Fetch | cut -d: -f2-)
   git checkout dev
-  ember install -g ember-cli-github-pages
+  ember install ember-cli-github-pages
+  git commit -am "[ci skip] install github-pages"
   ember github-pages:commit --message "[ci skip] Update gh-pages"
   git push
 }
