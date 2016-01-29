@@ -9,7 +9,7 @@ setup_git() {
 publish_gh_pages() {
   git checkout dev
   ember github-pages:commit --message "[ci skip] Update gh-pages"
-  git push
+  git push --set-upstream origin gh-pages
 }
 
 setup_git
