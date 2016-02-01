@@ -4,7 +4,10 @@ setup_git() {
   git config --global user.email "ericwhite613@gmail.com"
   git config --global user.name "Eric White"
   git clone --branch=dev https://github.com/EWhite613/xlsm-git-diff-test.git
+  git fetch origin
+  git checkout -b gh-pages origin/gh-pages
   git checkout dev
+  
 }
 
 
