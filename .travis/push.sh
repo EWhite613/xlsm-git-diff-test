@@ -1,10 +1,12 @@
 #!/bin/sh
 
 setup_git() {
-  git config --global user.email "ericwhite613@gmail.com"
-  git config --global user.name "Eric White"
   git clone --branch=dev https://github.com/EWhite613/xlsm-git-diff-test.git
   cd xlsm-git-diff-test/
+  git config --global user.email "ericwhite613@gmail.com"
+  git config --global user.name "Eric White"
+  git config credential.helper "store --file=.git/credentials"
+  echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   git fetch origin
   git checkout -b gh-pages origin/gh-pages
   git checkout dev
