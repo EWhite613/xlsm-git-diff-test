@@ -15,6 +15,7 @@ setup_git() {
 publish_gh_pages() {
   ember install ember-cli-github-pages
   git commit -am "[ci skip] install github-pages"
+  npm install && bower install
   ember github-pages:commit --message "[ci skip] Update gh-pages"
   git push
 }
