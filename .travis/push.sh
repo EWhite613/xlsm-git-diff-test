@@ -1,6 +1,7 @@
 #!/bin/sh
 
 setup_git() {
+  echo -en 'travis_fold:start:GenerateRoadmap\\r'
   git clone --branch=dev https://github.com/EWhite613/xlsm-git-diff-test.git
   cd xlsm-git-diff-test/
   git config --global user.email "ericwhite613@gmail.com"
@@ -10,7 +11,7 @@ setup_git() {
   git fetch origin
   git checkout -b gh-pages origin/gh-pages
   git checkout dev
-  
+  echo -en 'travis_fold:end:GenerateRoadmap\\r'
 }
 
 
